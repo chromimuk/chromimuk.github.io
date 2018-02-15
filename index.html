@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Demo</title>
+	<link rel="manifest" href="files/manifest.json" />
+	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-messaging.js"></script>
+	<script src="files/DI.WebPush-1.0.min.js"></script>
+</head>
+
+<body>
+
+	<a onclick="DI.Push.RequestPermission();">
+		Je désire recevoir des notifications
+	</a>
+
+	<h1>applicationKey</h1>
+	<pre>4882:AOxzQ9scpvD0RcaiJLwjUmfXroG5KCWO</pre>
+
+	<h1>Config</h1>
+	<pre>	
+	firebase.initializeApp({
+		apiKey: 'AIzaSyDhT3n_qnl8xoxAlbGqb2n2VRwjwcBJVE0',
+		authDomain: 'demodi-8272d.firebaseapp.com',
+		databaseURL: 'https://demodi-8272d.firebaseio.com',
+		projectId: 'demodi-8272d',
+		storageBucket: 'demodi-8272d.appspot.com',
+		messagingSenderId: '165900517247'
+	});
+	</pre>
+	  
+	<h1>Webservice</h1>
+	https://lightspeed.dev.ofsys.com/webservices/ofc4/push.ashx?method=SetToken
+
+
+	<script type="text/javascript">
+	<!-- if ('serviceWorker' in navigator) { -->
+	  <!-- window.addEventListener('load', function() { -->
+		<!-- navigator.serviceWorker.register('/firebase-messaging-sw.js').then(function(registration) { -->
+		  <!-- // Registration was successful -->
+		  <!-- console.log('ServiceWorker registration successful with scope: ', registration.scope); -->
+		<!-- }, function(err) { -->
+		  <!-- // registration failed :( -->
+		  <!-- console.log('ServiceWorker registration failed: ', err); -->
+		<!-- }); -->
+	  <!-- }); -->
+	<!-- } -->
+	</script>	 	
+
+</body>
+</html>
