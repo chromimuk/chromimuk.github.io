@@ -7,7 +7,18 @@
 
  const messaging = firebase.messaging();
  const applicationKey = '4953:GHGmojIeZImOaTCA0fOLNy2vaGopy9Av';
- const urlTrackPushReception = 'https://dev-webpush.dev-bm.hq2.rep/webservices/ofc4/push.ashx?method=TrackPushReception';
+
+var useLightspeed = true;
+var urlTrackPushReception;
+ if (useLightspeed === true)
+ {
+    urlTrackPushReception = 'https://lightspeed.dev.ofsys.com/webservices/ofc4/push.ashx?method=TrackPushReception';
+ }
+ else
+ {
+  urlTrackPushReception = 'https://dev-webpush.dev-bm.hq2.rep/webservices/ofc4/push.ashx?method=TrackPushReception';
+ }
+
 
 messaging.setBackgroundMessageHandler(function(payload) 
 {
