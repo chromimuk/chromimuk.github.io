@@ -75,6 +75,8 @@ function showNotification(payload)
             "PushId": payload.data.OFSYSReceptionID
         };
 
+        console.log('Calling TrackPushReception with data: ', data);
+             
         corsAjax({
             "url" : 'https://dev-webpush.dev-bm.hq2.rep/webservices/ofc4/push.ashx?method=TrackPushReception', 
             "data" : JSON.stringify(data)
@@ -88,9 +90,10 @@ function corsAjax(options)
 {
     var headers = new Headers({"Content-Type": "text/plain"});
     var body = options.data;
+
     fetch(options.url, { mode : 'cors', method: 'POST', headers: headers, body: body}).then(function(response)
     {
-        console.log(response);
+        console.log(response.json());
     });
 }
 
