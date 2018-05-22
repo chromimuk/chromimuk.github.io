@@ -91,6 +91,9 @@ function corsAjax(options)
     var headers = new Headers({"Content-Type": "text/plain"});
     var body = options.data;
 
+    console.log('before fetch');
+    console.log(body);
+ 
     fetch(options.url, { mode : 'cors', method: 'POST', headers: headers, body: body}).then(function(response)
     {
         console.log(response.json());
