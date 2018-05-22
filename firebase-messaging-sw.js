@@ -78,7 +78,7 @@ function showNotification(payload)
         console.log('Calling TrackPushReception with data: ', data);
              
         corsAjax({
-            "url" : 'https://dev-webpush.dev-bm.hq2.rep/webservices/ofc4/push.ashx?method=TrackPushReception', 
+            "url" : 'https://lightspeed.dev.ofsys.com/webservices/ofc4/push.ashx?method=TrackPushReception', 
             "data" : JSON.stringify(data)
         });
     }
